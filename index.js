@@ -9,7 +9,8 @@ const app = express()
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.sendFile('main.html', { root: __dirname })
+  // res.sendFile('main.html', { root: __dirname })
+  res.send('<h1>Hello World</h1>')
 })
 
 app.get('/provinces', async (req, res) => {
