@@ -100,10 +100,10 @@ app.get('/cuaca', async (req, res) => {
   })
 })
 
-app.use('/', (req, res) => {
-  res.status(404)
-  res.send('404')
-})
+// app.use('/', (req, res) => {
+//   res.status(404)
+//   res.send('404')
+// })
 
 const server = app.listen(3000, async () => {
   console.log('Express is listening on port 3000..')
