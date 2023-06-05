@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 const axios = require('axios')
 const cors = require('cors')
 const cheerio = require('cheerio');
@@ -9,9 +10,13 @@ const app = express()
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.sendFile('main.html', { root: __dirname })
-  // res.send('<h1>Hello World</h1>')
-  // res.json('Hello')
+  fs.readFile(__dirname + '/main.html', (err, html) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(html);
+    return res.end();
+  })
+  // res.sendFile('main.html', { root: __dirname })
+  // res.write(fs.readFileSync(__dirname + '/main.html'))
 })
 
 app.get('/provinces', async (req, res) => {
