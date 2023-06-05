@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Cuaca BMKG</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            padding-left: 1rem;
+            max-width: 1200px;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        p span {
+            display: inline-block;
+            font-family: monospace;
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Cuaca BMKG</h1>
+    <h2>Endpoint</h2>
+    <ul>
+        <li><a href="/provinces">/provinces</a> (Mendapatkan data list provinsi Indonesia)</li>
+        <li><a href="/districts?provinceId=bali">/districts?provinceId=bali</a> (Mendapatkan data list kabupaten/kota berdasarkan id provinsi)</li>
+        <li><a href="/cuaca?provinceId=bali&districtId=501162">/cuaca?provinceId=bali&districtId=501162</a> (Mendapatkan data cuaca berdasarkan id provinsi dan id kabupaten/kota)</li>
+    </ul>
+    <p>Note : Anda bisa menambahkan param <span>receive</span> pada endpoint cuaca untuk mendapatkan data yang spesifik, dengan value berupa key dari jenis data yang ingin didapatkan (sifatnya opsional)</p>
+    <p>(Contoh: <a href="/cuaca?provinceId=bali&districtId=501162&receive=humidity">/cuaca?provinceId=bali&districtId=501162&receive=humidity</a>)</p>
+    <p>List key <span>receive</span> yang tersedia :</p>
+    <ul>
+        <li>timestamp: Mendapatkan data timestamp</li>
+        <li>humidity: Mendapatkan data kelembapan udara</li>
+        <li>min_humidity: Mendapatkan data kelembapan udara maksimum</li>
+        <li>max_humidity: Mendapatkan data kelembapan udara minimum</li>
+        <li>temperature: Mendapatkan data suhu udara</li>
+        <li>max_temperature: Mendapatkan data suhu udara maksimum</li>
+        <li>min_temperature: Mendapatkan data suhu udara minimum</li>
+        <li>weather: Mendapatkan data cuaca</li>
+        <li>wind_direction: Mendapatkan data arah angin</li>
+        <li>wind_speed: Mendapatkan data kecepatan angin</li>
+    </ul>
+    <p>Sumber data : <a href="https://data.bmkg.go.id/prakiraan-cuaca/">BMKG</a></p>
+    <p>Github repo : <a href="https://github.com/madeaditya02/bmkg-cuaca-api">https://github.com/madeaditya02/bmkg-cuaca-api</a></p>
+</body>
+</html>
