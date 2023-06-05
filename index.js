@@ -106,8 +106,5 @@ app.use('/', (req, res) => {
 const server = app.listen(3000, async () => {
   console.log('Express is listening on port 3000..')
 })
-// district.find('parameter[id="wd"] timerange').toArray()[0].childNodes.forEach((el, i) => {
-// 	if (el.type == 'tag') {
-// 		console.log(el.attribs.unit, el.firstChild.data)
-// 	}
-// })
+
+module.exports = app
