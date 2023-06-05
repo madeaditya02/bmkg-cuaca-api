@@ -11,6 +11,7 @@ app.use(cors())
 app.get('/', (req, res) => {
   // res.sendFile('main.html', { root: __dirname })
   res.send('<h1>Hello World</h1>')
+  res.json('Hello')
 })
 
 app.get('/provinces', async (req, res) => {
